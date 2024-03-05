@@ -31,9 +31,9 @@ Basedpin is available under dual licensing options:
 
 Follow these steps to get started with basedpin:
 
-1. **Clone the Repository**: `git clone https://github.com/basedpin/basedpin.git`
-2. **Install Dependencies**: Navigate to the project directory and run `setup.sh` to install necessary dependencies.
-3. **Build and Deploy**: Follow the build instructions in the BUILD.md file to compile and deploy basedpin on your device.
+1. **Clone the Repository**: `git clone https://github.com/BasedSocialCo/basedpin.git`
+<!-- 2. **Install Dependencies**: Navigate to the project directory and run `setup.sh` to install necessary dependencies.
+3. **Build and Deploy**: Follow the build instructions in the BUILD.md file to compile and deploy basedpin on your device. -->
 
 ## Contributing
 
