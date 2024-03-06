@@ -94,7 +94,9 @@ Step 2: Following [this video](https://www.youtube.com/watch?v=XA4j9hRiFmw), att
 ![IMG_0162](https://github.com/BasedSocialCo/whomane/assets/43514161/94c665ba-e72f-45a7-90d5-05c24899ca09)
 
 
-
+Done! You have assembled the hardware! You should end up with something like this 
+(note that button may be located in a different place. In this picture I used different location)
+![IMG_0156](https://github.com/BasedSocialCo/whomane/assets/43514161/4d09fb4c-89ee-4890-ac5c-1f5d38516ce9)
 
 
 ### 6. Install software and run
