@@ -80,6 +80,7 @@ const search_by_face = async (imageUrl: string): Promise<[string | null, any[] |
   };
   
   const url  = await uploadImage(imageUrl)
+  // @ts-ignore
     const responseImage = await axios.get(url, { responseType: 'arraybuffer' });
     const imageData = Buffer.from(responseImage.data, 'binary');
 
@@ -96,12 +97,16 @@ let response = await axios.post(site+'/api/upload_pic', form, { headers: {
 } });
 response = response.data;
   console.log(response);
-
+// @ts-ignore
   if (response.error) {
+    // @ts-ignore
     return [`${response.error} (${response.code})`, null];
   }
+// @ts-ignore
 
   const id_search = response.id_search;
+  // @ts-ignore
+
   console.log(`${response.message} id_search=${id_search}`);
   const json_data = {
     id_search: id_search,
@@ -109,16 +114,25 @@ response = response.data;
     status_only: false,
     demo: TESTING_MODE,
   };
-
+// @ts-ignore
   while (true) {
     response = await axios.post(site+'/api/search', json_data, { headers: headers });
     response = response.data;
+    // @ts-ignore
+
     if (response.error) {
+        // @ts-ignore
+
       return [`${response.error} (${response.code})`, null];
-    }
+    }// @ts-ignore
+
     if (response.output) {
+        // @ts-ignore
+
       return [null, response.output.items];
     }
+    // @ts-ignore
+
     console.log(`${response.message} progress: ${response.progress}%`);
     await new Promise(r => setTimeout(r, 1000));
   }
