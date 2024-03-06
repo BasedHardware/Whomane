@@ -76,7 +76,8 @@ Replace `username` with the username you set up earlier. Accept the prompt and e
 ### 6. Transfer Project Files
 
 From a terminal on your computer (not connected to your
-Raspberry Pi), transfer the project folder to your Raspberry Pi:
+Raspberry Pi), transfer the project that [you should have installed](https://github.com/BasedSocialCo/whomane.git) to your Raspberry Pi. For that:
+
 
 ```
 scp -r /path/to/your/project/pi <yourusername>@raspberrypi:~/
