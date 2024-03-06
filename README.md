@@ -1,4 +1,4 @@
-# BasedPin: Open-Source AI Wearable with a Camera
+# Whomane: Open-Source AI Wearable with a Camera
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/basedsocialco)](https://twitter.com/basedsocialco) &ensp;
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)](https://opensource.org/license/agpl-v3)
