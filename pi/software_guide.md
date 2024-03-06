@@ -19,7 +19,7 @@ This guide provides step-by-step instructions for setting up a Raspberry Pi Zero
 
 ## Prerequisites
 
-- Raspberry Pi Zero W
+- Raspberry Pi Zero 2 W
 - MicroSD card (8GB or larger recommended)
 - Internet connection
 - Access to a computer with an SD card reader
