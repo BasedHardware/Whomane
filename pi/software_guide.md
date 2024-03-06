@@ -107,5 +107,5 @@ python start.py
 
 Congratulations! You have successfully set up your Raspberry Pi Zero W for development with your project.
 
-```
+
 Thanks to Shaun for initial template for this guide
