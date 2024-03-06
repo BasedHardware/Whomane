@@ -1,33 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import PersonCard from './ui/personcard'
+import { getPeopleFromFirestore, updatePersonDoc } from "../utils/firebase";
+import PersonCard from './PersonCard'; // Adjust the import path according to your project structure
 
-const CardsList = () => {
-  const [items, setItems] = useState([]); // State to store the data
+export default function CardList() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Function to fetch data from your database
-  const fetchData = async () => {
+  const fetchPeople = async () => {
     try {
-      const response = await fetch('your-database-endpoint');
-      const data = await response.json();
-      setItems(data); // Assuming the data is an array of items
+      const fetchedPeople = await getPeopleFromFirestore();
+      setData(fetchedPeople);
+      setLoading(false);
     } catch (error) {
-      console.error("Error fetching data: ", error);
+      console.error("Error fetching people:", error);
+      setLoading(false);
     }
   };
 
-  // Use useEffect to fetch data when the component mounts
   useEffect(() => {
-    fetchData();
-  }, []); // Empty dependency array means this runs once on mount
+    fetchPeople();
+  }, []);
 
-  // Render a list of Card components
   return (
-    <div>
-      {items.map((item) => (
-        <PersonCard key={}/>
-      ))}
+    <div key="1" className="flex flex-col w-full min-h-screen">
+      {/* Header and other UI elements */}
+      {loading && <p className='text-white'>Loading people...</p>}
+      <main className="flex flex-col bg-black">
+        
+        {data.map((person) => (
+          <PersonCard key={person.id} {...person} updatePersonDoc= {updatePersonDoc}/>
+        ))}
+      </main>
     </div>
   );
-};
-
-export default CardsList;
+}
