@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react";
+import Image from 'next/image'
 
 
 
@@ -101,8 +102,19 @@ export default function NewPhoto() {
                   <p>Loading...</p>
                 ) : (
                   <>
-<video ref={videoRef} autoPlay style={{ display: image?'none':'flex', width: '100%', height: '100%', objectFit: 'cover' }}></video>                    <canvas ref={canvasRef} style={{ display: 'none' }} width="640" height="480"></canvas>
-                    {image && <img src={image} alt="Captured" />}
+<video ref={videoRef} autoPlay style={{ display: image ? 'none' : 'flex', width: '100%', height: '100%', objectFit: 'cover', transform: 'rotateY(180deg)' }}></video>
+<canvas ref={canvasRef} style={{ display: 'none' }} width="640" height="480"></canvas>
+{image && (
+  <Image
+    src={image}
+    alt="Captured"
+    width={640}
+    height={480}
+    style={{ transform: 'rotateY(180deg)' }}
+    loader={({ src }) => src}
+    unoptimized // since you're handling optimization
+  />
+)}
                   </>
                 )}
               </div>
