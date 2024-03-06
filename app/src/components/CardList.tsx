@@ -27,7 +27,7 @@ export default function CardList() {
       {loading && <p className='text-white'>Loading people...</p>}
       <main className="flex flex-col bg-black">
         
-        {data.map((person) => (
+        {data.map((person: any) => (
           <PersonCard key={person.id} {...person} updatePersonDoc= {updatePersonDoc}/>
         ))}
       </main>

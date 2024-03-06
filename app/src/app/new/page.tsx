@@ -6,7 +6,8 @@ import { useEffect, useRef, useState } from "react";
 
 
 export default function NewPhoto() {
-    const videoRef = useRef(null);
+    // const videoRef = useRef(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef(null);
     const [image, setImage] = useState('');
     const [loading, setLoading] = useState(false);
@@ -14,21 +15,25 @@ export default function NewPhoto() {
     const startVideo = async () => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        videoRef.current.srcObject = stream;
+        if(videoRef.current) {
+          videoRef.current.srcObject = stream;
+        }
       } catch (err) {
         console.error('Error accessing the camera', err);
       }
     };
 
     const stopVideo = () => {
-        const stream = videoRef.current.srcObject;
-        const tracks = stream.getTracks();
-      
-        tracks.forEach((track) => {
-          track.stop();
-        });
-      
-        videoRef.current.srcObject = null;
+        if(videoRef.current && videoRef.current.srcObject) {
+          const stream = videoRef.current.srcObject as MediaStream;
+          const tracks = stream.getTracks();
+        
+          tracks.forEach((track) => {
+            track.stop();
+          });
+        
+          videoRef.current.srcObject = null;
+        }
       }
 
 
@@ -57,14 +62,19 @@ export default function NewPhoto() {
       };
   
     const takePhoto = () => {
-      const context = canvasRef.current.getContext('2d');
-      context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
-      const imageDataUrl = canvasRef.current.toDataURL('image/png');
+      if(canvasRef.current && videoRef.current) {
+        const context = (canvasRef.current as HTMLCanvasElement).getContext('2d');
+        if(context && videoRef.current) {
+          context.drawImage(videoRef.current, 0, 0, (canvasRef.current as HTMLCanvasElement).width, (canvasRef.current as HTMLCanvasElement).height);
+        }
+        const imageDataUrl = (canvasRef.current as HTMLCanvasElement).toDataURL('image/png');
+        sendImageToAPI(imageDataUrl);
+        stopVideo();
+        setImage(imageDataUrl);
+        window.location.href = '/network';
+      }
 
-      sendImageToAPI(imageDataUrl);
-      stopVideo();
-
-      setImage(imageDataUrl);
+   
     };
 
     useEffect(() => {

@@ -8,10 +8,10 @@ export default async function handler(req, res) {
   try {
     const response = await fetch('https://api.workflows.tryleap.ai/v1/runs', {
       method: 'POST',
-      headers: {
+      headers: new Headers({
         'Content-Type': 'application/json',
-        'X-Api-Key': process.env.LEAP_API_KEY,
-      },
+        'X-Api-Key': process.env.LEAP_API_KEY || '',
+      }),
       body: JSON.stringify({
         workflow_id: "wkf_0CzZBKTedkvVrT",
         webhook_url: "https://google.com",
@@ -29,9 +29,9 @@ export default async function handler(req, res) {
     while (!finishedRunning) {
       const response = await fetch(`https://api.workflows.tryleap.ai/v1/runs/${workflow_id}`, {
         method: 'GET',
-        headers: {
-          'X-Api-Key': process.env.LEAP_API_KEY,
-        }
+        headers: new Headers({
+          'X-Api-Key': process.env.LEAP_API_KEY || '',
+        })
       });
       const responseData = await response.json();
       if (responseData.status === 'completed') {

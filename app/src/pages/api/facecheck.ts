@@ -60,8 +60,7 @@ const uploadImage = async (imageData: string): Promise<Blob> => {
           // Complete function
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             console.log('File available at', downloadURL);
-            resolve(downloadURL);
-            return downloadURL
+            resolve(downloadURL as unknown as Blob);
           });
         }
       );
@@ -81,7 +80,7 @@ const search_by_face = async (imageUrl: string): Promise<[string | null, any[] |
   };
   
   const url  = await uploadImage(imageUrl)
-    const responseImage = await axios.get(url, { responseType: 'arraybuffer' });
+    const responseImage = await axios.get(url.toString(), { responseType: 'arraybuffer' });
     const imageData = Buffer.from(responseImage.data, 'binary');
 
 
@@ -98,12 +97,12 @@ let response = await axios.post(site+'/api/upload_pic', form, { headers: {
 response = response.data;
   console.log(response);
 
-  if (response.error) {
-    return [`${response.error} (${response.code})`, null];
+  if (response.data.error) {
+    return [`${response.data.error} (${response.data.code})`, null];
   }
 
-  const id_search = response.id_search;
-  console.log(`${response.message} id_search=${id_search}`);
+  const id_search = response.data.id_search;
+  console.log(`${response.data.message} id_search=${id_search}`);
   const json_data = {
     id_search: id_search,
     with_progress: true,
@@ -113,14 +112,13 @@ response = response.data;
 
   while (true) {
     response = await axios.post(site+'/api/search', json_data, { headers: headers });
-    response = response.data;
-    if (response.error) {
-      return [`${response.error} (${response.code})`, null];
+    if (response.data.error) {
+      return [`${response.data.error} (${response.data.code})`, null];
     }
-    if (response.output) {
-      return [null, response.output.items];
+    if (response.data.output) {
+      return [null, response.data.output.items];
     }
-    console.log(`${response.message} progress: ${response.progress}%`);
+    console.log(`${response.data.message} progress: ${response.data.progress}%`);
     await new Promise(r => setTimeout(r, 1000));
   }
 };
