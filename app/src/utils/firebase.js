@@ -13,7 +13,7 @@ import {
   doc,
 } from "firebase/firestore";
 
-
+import { serverTimestamp } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
@@ -32,42 +32,30 @@ if (!getApps().length) {
 }
 const db = getFirestore();
 
-export async function addMessageToFirestore(
-  messageContent,
-  userId,
-  role,
-  privacyOption,
-  previousUserMessage = ""
-) {
-  try {
-    const messagesCollection = collection(
-      db,
-      "messages"
-    );
 
-    const docRef = await addDoc(
-      messagesCollection,
-      {
-        content: messageContent,
-        role: role,
-        user: userId,
-        timestamp: Date.now(),
-        privacyOption: privacyOption,
-        previousUserMessage: previousUserMessage,
-        secretKey: secretKeyValue,
-      }
-    );
-    console.log(
-      "Document written with ID: ",
-      docRef.id
-    );
+export const addPersonWithSocialsToFirestore = async (socials) => {
+  try {
+    const peopleCollection = collection(db, "people");
+    const docRef = await addDoc(peopleCollection, {
+      time: serverTimestamp(),
+        });
+
+    const socialsCollection = collection(docRef, "socials");
+
+    for (let social of socials) {
+      console.log(social);
+      const documentData = {
+        'score': social['score'],
+        'url': social['url'],
+      };
+      await addDoc(socialsCollection, documentData);
+    }
+
+    console.log("Document written with ID: ", docRef.id);
   } catch (error) {
-    console.error(
-      "Error adding document: ",
-      error
-    );
+    console.error("Error adding document: ", error);
   }
-}
+};
 
 // get all messages with role assistant and privacyOption public
 export const getPeopleFromFirestore =
@@ -90,7 +78,11 @@ export const getPeopleFromFirestore =
         socials.sort((a, b) => b.score - a.score);
      
         person.socials = socials;
-        person.time = new Date(person.time.seconds * 1000).toString();
+        try {
+          person.time = new Date(person.time.seconds * 1000).toString();
+        } catch (error) {
+          return person.time;
+        }
         person.id = doc.id; // Adding the id of the person to the data
         if(socials.length > 0) {
           person.socials = socials;

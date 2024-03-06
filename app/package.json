@@ -11,6 +11,7 @@
   "dependencies": {
     "@microlink/react": "^5.5.18",
     "@radix-ui/react-slot": "^1.0.2",
+    "axios": "^1.6.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "firebase": "^10.8.1",
@@ -20,6 +21,7 @@
     "next": "14.1.1",
     "react": "^18",
     "react-dom": "^18",
+    "styled-components": "^6.1.8",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7"
   },
