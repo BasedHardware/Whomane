@@ -7,9 +7,9 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/basedsocialco)](https://twitter.com/basedsocialco) &ensp;
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)](https://opensource.org/license/agpl-v3)
 
-**Based Social Company** vision is to make wearable AI accessible to everyone, to use and to build on. Our mission is to provide the tools and support, so that you can focus on what matters.
+Our vision is to make wearable AI accessible to everyone, to use and to build on. Our mission is to provide the tools and support, so that you can focus on what matters.
 
-Be apart of the revolution! **Based Social Company** is here to stay, at the forefront of AI hardware innovation.
+Be apart of the revolution! **Whomane** is here to stay, at the forefront of AI hardware innovation.
 
 <!-- ## Features
 
