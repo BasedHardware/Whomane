@@ -31,7 +31,9 @@ Basedpin is available under dual licensing options:
 
 Follow these steps to get started with basedpin:
 
-1. **Clone the Repository**: `git clone https://github.com/BasedSocialCo/basedpin.git`
+1. [**Clone/install the project**](https://github.com/BasedSocialCo/whomane/tree/main/app#readme) 
+2. [**Buy/Assemble Hardware**](https://github.com/BasedSocialCo/whomane/blob/main/pi/hardware.md)
+3. [**Install Software on your hardware**](https://github.com/BasedSocialCo/whomane/blob/main/pi/software_guide.md)
 <!-- 2. **Install Dependencies**: Navigate to the project directory and run `setup.sh` to install necessary dependencies.
 3. **Build and Deploy**: Follow the build instructions in the BUILD.md file to compile and deploy basedpin on your device. -->
 
