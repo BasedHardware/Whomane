@@ -60,60 +60,40 @@ Finally, attach your camera to your raspberry Pi with tape
 You will need to insert button's 2 (of 4 total) contacts into the board so that 2 contacts will be left unused.   
 ![IMG_0159](https://github.com/BasedSocialCo/whomane/assets/43514161/6deaba8e-ee26-49e8-9cb8-714c6e88eb6f)
 
-The pins you will use are 
+The pins you will use are #5 and #7 on the row that is closer to the border of your Pi (see picture below)
 
 ![IMG_0160](https://github.com/BasedSocialCo/whomane/assets/43514161/34f8ea0c-b3d2-4a6e-ba68-78efeb305924)
 
+After you insert button's contacts into the board, take a screwdriver or keys or anything solid and bend the contacts so that the button wouldn't fall off.
 
+![IMG_0161](https://github.com/BasedSocialCo/whomane/assets/43514161/757a57a5-4040-485c-b537-384a828d2e65)
+
+
+
+### Step3: Prepare Pi sugar
+Raspberry Pi sugar has good magnets which we will use as our Pin holder
+
+
+
+Take something sharp (knife) and carefully remove both big circle magnets from your Pi Sugar. 
+
+![IMG_0163](https://github.com/BasedSocialCo/whomane/assets/43514161/2701fc55-7295-4bd9-baf9-f8e43fd71187)
+
+After, put double-sided tape on your battery and attach the battery to the battery's board
+
+As the last step, attach one of the magnets to the back of your battery and keep the 2nd magnet (you'll use it to "hang" the Pin on your clothes)
+
+![IMG_0164](https://github.com/BasedSocialCo/whomane/assets/43514161/055cd708-7cbe-417a-b4e9-df9b3fda2466)
+
+### 3. Attach Pi sugar battery to raspberry Pi
 
 Step 1: unpack your Raspberry pi sugar battery. it should contain 4-5 screws
 
 Step 2: Following [this video](https://www.youtube.com/watch?v=XA4j9hRiFmw), attach your Pi Sugar to your Raspberry Pi. Note that this video may have screws you don't have (and you don't need them). Attach directly with your screws.
 
-You should end up with something like this: 
-![IMG_0098](https://github.com/kodjima33/ADeus/assets/43514161/3f71fab5-830e-42c1-9c78-fefa3e71ff9c)
-
-### 3. Attach header pins to microphone 
-![IMG_0096](https://github.com/kodjima33/ADeus/assets/43514161/4d1ed53d-ad8f-4120-8429-5d4a00a29c07)
-
-You need to attach pins to your microphone to be able to connect it to Raspberry Pi later. You may choose to connect the pins first or solder via wires directly (if you are a professional). We will do it with pins. 
+![IMG_0162](https://github.com/BasedSocialCo/whomane/assets/43514161/94c665ba-e72f-45a7-90d5-05c24899ca09)
 
 
-**With soldering:**
-
-From your microphone kit, you received 6 yellow pins on the same line. 
-
-Step 1: Since our microphone has 2 lines of pins, you need to break the 6-pin line into 2 pieces (see screenshot for reference). Don't worry to make a mistake, you have 2 more microphones! 
-
-Step 2: Following same guides, solder pins that you got in the same kit with your [Microphone](https://www.amazon.com/AITRIP-Omnidirectional-Microphone-Precision-Interface/dp/B0972XP1YS/ref=pd_ci_mcx_pspc_dp_d_2_t_1?pd_rd_w=a5gvQ&content-id=amzn1.sym.568f3b6b-5aad-4bfd-98ee-d827f03151e4&pf_rd_p=568f3b6b-5aad-4bfd-98ee-d827f03151e4&pf_rd_r=ZD4BWQF760DG2TXHPBZ7&pd_rd_wg=qQDw5&pd_rd_r=94ce375e-d574-4fd5-8356-1fad3c7e61a4&pd_rd_i=B092HWW4RS&th=1).
-
-
-**Without soldering:**
-
-From your solderless kit, you should have receieved 2x header connectors.
-
-Step 1:  Since you wouldn't need one of the connectors, you should cut/break one of them into smaller pieces. See [this guide](https://www.youtube.com/watch?time_continue=177&v=kQqw9en2Bx8&embeds_referring_euri=https%3A%2F%2Fwww.google.com%2F&source_ve_path=MjM4NTE&feature=emb_title) for reference. 
-
-You need 2 pieces with 3 pins each for your microphone (see image above for reference). 
-
-Step 2:  Once you cut them, connect pins with your microphone the same way you connected your header connector to the board using [Solderless pins kit](https://www.amazon.com/Vilros-Raspberry-Headers-Easy-Installation-Soldering/dp/B0CGRYYY63/ref=sr_1_1?crid=I922BYJ9EVY4&dib=eyJ2IjoiMSJ9.hLsapq3AI0K4IADEQc56qlx0DtBRnjf8VmGz-Sor7t3Bf_UbyZimITYT8B4ojUxofB1pwnaQWyJQ-zZzrv_hDE01zCgJRUtdCRTgE31sfSGH1pBn9koR4mldMizddvYGaAjsEf-qvP0NeffTMTFdoGWvCsGfbdbGgEcAizZjFPyZvAYlYeaoXjd6ySSgx-zL7CQ32vCBScitqHUyKNgi2lkAA8XBzhlZ0P92f-zqPmE.PWxHiswToTA9VCH5mZ2QEqHYYVfnzrZ0bCvaaRaif1s&dib_tag=se&keywords=male+pin+headers+solderless+raspberry&qid=1709077414&sprefix=male+pin+headers+solderless+raspberr%2Caps%2C160&sr=8-1)
-
-
-
-### 4. Connect Microphone to your Raspberry Pi
-
-Along with your microphones you received multiple pin  wires. 
-- Devide them into 2 groups of 3
-- connect these wires to your header pins on your microphone (colors don't matter) 
-
-**Now it's time to connect your microphone to Raspberry Pi.**
-
-Each pin is responsible for a specific task, which is why you need to follow a schema of connecting it correctly. If you make a mistake, something might not work as intended. 
-
-Here is the schema for your microphone
-![wires](https://github.com/kodjima33/ADeus/assets/43514161/03e3ebf8-51b2-4d8e-b4d5-5dd53901992f)
-
-If you have a different microphone type by Adafruit, try this ![micro2](https://github.com/kodjima33/ADeus/assets/43514161/237b331e-2a72-41bc-8e6c-7796cfa76b47)
 
 ### 5. Assemble everything
 
