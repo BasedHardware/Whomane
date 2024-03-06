@@ -15,52 +15,56 @@ parent: How to Guides
 {:toc}
 
 ---
-![IMG_0104](https://github.com/kodjima33/ADeus/assets/43514161/32d2bf78-e65c-4c78-bc9c-1f6387fd524e)
+
+![IMG_0156](https://github.com/BasedSocialCo/whomane/assets/43514161/f5004a26-3a2f-4e5c-a229-564b3f80a556)
 
 
-This guide provides step-by-step instructions for assembling hardware device for recording audio. Currently we use Raspberry Pi Zero W but will switch to ESP32 soon. 
+This guide provides step-by-step instructions for assembling hardware device for capturing images. Currently we use Raspberry Pi Zero 2 W
 ## What do you need to buy
 
-Option 1: **With soldering** (choose this if you have soldering experience or if you feel comfortable to try it out)
-- [Raspberry Pi Zero 2 W starter kit](https://www.amazon.com/Vilros-Raspberry-Incudes-HDMI-USB-Adapters/dp/B09M1PS35R/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.7uwaVS6VlIyCOjU6bSCtilVtXA4LRZlsMI7u7c0q7_RWrDRzbTeOdGo7RMfSkGMR-xvuauf8BnIWA0yDFsu05NCiJuPaCtsgEG_4abxGwHYKI9tpQko0gVaBg3sOrqgV0QigrnGU7rVbuWtgMwqil-l5W3LrEkA27nawQ5wptpLJ-T_p9nUU8QE5xHWXd9b27tsm-TM0dYnB_KRw-JD95m2f7aXZFiXRC2S68UEq0eE.dEIhxLbFiZ4WOZYcBpqwqwv_ACeMe7Z46VDGsVTaTNY&dib_tag=se&keywords=raspberry+pi+zero+2+w&qid=1709075875&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1)
-- [MicroSD card ](https://www.amazon.com/SanDisk-2-Pack-microSDHC-Memory-2x32GB/dp/B08GY9NYRM/ref=pd_bxgy_d_sccl_1/145-9248613-0901538?content-id=amzn1.sym.839d7715-b862-4989-8f65-c6f9502d15f9&th=1)
-- [Microphone](https://www.amazon.com/AITRIP-Omnidirectional-Microphone-Precision-Interface/dp/B0972XP1YS/ref=pd_ci_mcx_pspc_dp_d_2_t_1?pd_rd_w=a5gvQ&content-id=amzn1.sym.568f3b6b-5aad-4bfd-98ee-d827f03151e4&pf_rd_p=568f3b6b-5aad-4bfd-98ee-d827f03151e4&pf_rd_r=ZD4BWQF760DG2TXHPBZ7&pd_rd_wg=qQDw5&pd_rd_r=94ce375e-d574-4fd5-8356-1fad3c7e61a4&pd_rd_i=B092HWW4RS&th=1)
-- [Battery](https://amazon.com/Pisugar2-Portable-Pwnagotchi-Raspberry-Accessories/dp/B08D678XPR?crid=20HTG4JLWZJBO&keywords=battery+for+raspberry+pi-zero&qid=1706907491&s=electronics&sprefix=,electronics,287&sr=1-3)
-- [Soldering kit](https://www.amazon.com/Soldering-soldering-solder-adjustable-temperature/dp/B09DY7CCW5/ref=sr_1_6?dib=eyJ2IjoiMSJ9.WmwXfdV-vvTdM3IB5u-qMa9zvxaVSUsnexrrgK27EhfSFJwyD213PAtWppYhuPEOMtHwAg_eApOMEDEXRK65p-8GLcwF6eVc7LgpzFTp5DQvps3Ntjs7j2N4RWd6kCFfDij2mjwv9-jd3kdId9KS1RBx56Q4RVVgcDXk2JGgGTC9FonAt1LayKu8YlcHXCJOxHJHVrjduGnfgOa1jeL7GLtDGAa3xfl6cvZUQ9lIPKC1l5JJAauH-sQtWAnLi7qMJ1n7BRvNjorfeOATrP7CINmeuw_kyS4vZFrsdfJYDsM.mW2R1sZRucWsuGLneASupjvBtsTKTiUR5Jg5PcrFq_4&dib_tag=se&keywords=solder+kit&qid=1709075533&sr=8-6)
 
-Option 2: **Without Soldering**
+ **Without Soldering**
 - [Raspberry Pi Zero 2 W starter kit](https://www.amazon.com/Vilros-Raspberry-Incudes-HDMI-USB-Adapters/dp/B09M1PS35R/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.7uwaVS6VlIyCOjU6bSCtilVtXA4LRZlsMI7u7c0q7_RWrDRzbTeOdGo7RMfSkGMR-xvuauf8BnIWA0yDFsu05NCiJuPaCtsgEG_4abxGwHYKI9tpQko0gVaBg3sOrqgV0QigrnGU7rVbuWtgMwqil-l5W3LrEkA27nawQ5wptpLJ-T_p9nUU8QE5xHWXd9b27tsm-TM0dYnB_KRw-JD95m2f7aXZFiXRC2S68UEq0eE.dEIhxLbFiZ4WOZYcBpqwqwv_ACeMe7Z46VDGsVTaTNY&dib_tag=se&keywords=raspberry+pi+zero+2+w&qid=1709075875&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1)
 - [MicroSD card (8GB or larger recommended)](https://www.amazon.com/SanDisk-2-Pack-microSDHC-Memory-2x32GB/dp/B08GY9NYRM/ref=pd_bxgy_d_sccl_1/145-9248613-0901538?content-id=amzn1.sym.839d7715-b862-4989-8f65-c6f9502d15f9&th=1)
-- [Microphone](https://www.amazon.com/AITRIP-Omnidirectional-Microphone-Precision-Interface/dp/B0972XP1YS/ref=pd_ci_mcx_pspc_dp_d_2_t_1?pd_rd_w=a5gvQ&content-id=amzn1.sym.568f3b6b-5aad-4bfd-98ee-d827f03151e4&pf_rd_p=568f3b6b-5aad-4bfd-98ee-d827f03151e4&pf_rd_r=ZD4BWQF760DG2TXHPBZ7&pd_rd_wg=qQDw5&pd_rd_r=94ce375e-d574-4fd5-8356-1fad3c7e61a4&pd_rd_i=B092HWW4RS&th=1)
 - [Battery](https://amazon.com/Pisugar2-Portable-Pwnagotchi-Raspberry-Accessories/dp/B08D678XPR?crid=20HTG4JLWZJBO&keywords=battery+for+raspberry+pi-zero&qid=1706907491&s=electronics&sprefix=,electronics,287&sr=1-3)
-- [Solderless pins kit](https://www.amazon.com/Vilros-Raspberry-Headers-Easy-Installation-Soldering/dp/B0CGRYYY63/ref=sr_1_1?crid=I922BYJ9EVY4&dib=eyJ2IjoiMSJ9.hLsapq3AI0K4IADEQc56qlx0DtBRnjf8VmGz-Sor7t3Bf_UbyZimITYT8B4ojUxofB1pwnaQWyJQ-zZzrv_hDE01zCgJRUtdCRTgE31sfSGH1pBn9koR4mldMizddvYGaAjsEf-qvP0NeffTMTFdoGWvCsGfbdbGgEcAizZjFPyZvAYlYeaoXjd6ySSgx-zL7CQ32vCBScitqHUyKNgi2lkAA8XBzhlZ0P92f-zqPmE.PWxHiswToTA9VCH5mZ2QEqHYYVfnzrZ0bCvaaRaif1s&dib_tag=se&keywords=male+pin+headers+solderless+raspberry&qid=1709077414&sprefix=male+pin+headers+solderless+raspberr%2Caps%2C160&sr=8-1)
+- [Camera](https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS?th=1)
+- [Button](https://www.amazon.com/Adafruit-Colorful-Square-Tactile-Assortment/dp/B00KLDQ0YG/ref=sr_1_1?crid=3ALMFBAVSNXWS&dib=eyJ2IjoiMSJ9.nVaQ7gCpV3AiaDvAtVwKlU-gzxSiUrvudVwVopmaJlP4VhXwSqRniN1w6FWMUCglsKNimvQsPhxgYuunMw6Sc8Y33zhVBx_C5G4yr_3i4TZY_P8vCOEpopu36b4mk3Y5sIpqbDWRLqjI2HmoPdA4Jtv9Ite32dJoUg7X7GBdHRwLqd225DsbkOj9uyUo38SHZLcJaPNxkiEM-_MpCzgoSm6s5nYL7qbQM_7h2BBup1g.p7btLbSYPdT2qmJ126D6niGFfCGmnifGbSI9AHK8ZRo&dib_tag=se&keywords=adafruit+square+buttons&qid=1709697564&sprefix=adafruit+squarebuttons%2Caps%2C164&sr=8-1) (we used this but you can get any other button that you like)
+- [Any Double-sided tape like this](https://www.amazon.com/Aylaa-Adhesive-Removable-Picture-Multipurpose/dp/B0C54LRW2G/ref=sr_1_5?crid=395F2X9PJWNB7&dib=eyJ2IjoiMSJ9.5-VEQuzZ-lua7GMufaJfJetMnXiYGtC-7mHHq4GUTBuo-bP9hfdqGpy0M6WKGg5OmjPkwLz638JP2s1qAJc8VjwKZpW6vE-CJNz0aRQ-y2KX0z7FPV8EGUobEijmeZvEzGlH1tVjcZz1KjJiv6Dip0_ArdYmB7x3P5QRVuO_L1fbWQ1GX73VXH_JdrsVOZTQjY5OuQxevb4ORTX42m1Yf_2ONxniKRDI-eqnPbvxXnczwKe99EGQ5zvGu1Nb0jEuRuHWkNCJHTSzbu-Bqzp3JGyhS5exydmsmrkNCqrDtFI.yiT2ohdWcGWhEAYrypFnd-AkiUZZuXt9V7Fh65JbVW8&dib_tag=se&keywords=2+sided+tape+mounting+tape&qid=1709697657&sprefix=2-sided+tape+moun%2Caps%2C158&sr=8-5)
 
 ## Assembling instructions
 
-### 1. Connect pin headers to Raspberry Pi
+### Connect Camera to raspberry Pi
 
 
 You have a Raspberry Pi board that looks like this ![zero2-close-up](https://github.com/kodjima33/ADeus/assets/43514161/c9f5ce13-9e63-48ca-b930-4f13501b4de4)
 
-Your goal is to attach a the header connector to your Raspberry Pi.
+Your goal is to attach a the camera to it via a short ribbon cable that you received along with your raspberry Pi Kit.
 
-![3662-00 (1)](https://github.com/kodjima33/ADeus/assets/43514161/b968767a-799b-4997-8c0d-44fad1a79d9f)
-
-To every beginner this seems a very hard step but it's actually not that hard. 
-
-
-**With Soldering**
-You'd need to solder the header connector. 
-- You can do it  by following these videos [Video1](https://www.youtube.com/watch?v=8Z-2wPWGnqE) and [Video2](https://www.youtube.com/watch?v=UDdbaMk39tM)
-
-**Without soldering:**
-- [Follow this guide](https://www.youtube.com/watch?v=IncLvO3mmdc) and use the [solderless pins](https://www.amazon.com/Vilros-Raspberry-Headers-Easy-Installation-Soldering/dp/B0CGRYYY63/ref=sr_1_1?crid=I922BYJ9EVY4&dib=eyJ2IjoiMSJ9.hLsapq3AI0K4IADEQc56qlx0DtBRnjf8VmGz-Sor7t3Bf_UbyZimITYT8B4ojUxofB1pwnaQWyJQ-zZzrv_hDE01zCgJRUtdCRTgE31sfSGH1pBn9koR4mldMizddvYGaAjsEf-qvP0NeffTMTFdoGWvCsGfbdbGgEcAizZjFPyZvAYlYeaoXjd6ySSgx-zL7CQ32vCBScitqHUyKNgi2lkAA8XBzhlZ0P92f-zqPmE.PWxHiswToTA9VCH5mZ2QEqHYYVfnzrZ0bCvaaRaif1s&dib_tag=se&keywords=male+pin+headers+solderless+raspberry&qid=1709077414&sprefix=male+pin+headers+solderless+raspberr%2Caps%2C160&sr=8-1) kit you purchased
+[Here is a more detailed video](https://www.youtube.com/watch?v=zFAX4pH1BPA)
 
 This is what you should end up with: 
-![raspberry_pi_zero_iso_demo_1B_ORIG](https://github.com/kodjima33/ADeus/assets/43514161/a369b496-45d0-4d47-b235-6ab46e5d46f3)
+
+![IMG_0157](https://github.com/BasedSocialCo/whomane/assets/43514161/2818227f-4780-49dd-b2ec-90ca1141ffba)
+
+After you connect the camera, turn over everything and put a little bit of double-sided tape on the back of your camera
+![IMG_0158](https://github.com/BasedSocialCo/whomane/assets/43514161/d229726d-270b-4e29-a05a-ffcf78726435)
+
+Finally, attach your camera to your raspberry Pi with tape
+![CleanShot 2024-03-05 at 20 45 47](https://github.com/BasedSocialCo/whomane/assets/43514161/3df341b2-4f9d-4439-a8eb-5af412d9530b)
 
 
-### 2. Connect your Raspberry Pi with Sugar pi
+
+
+### Step2: Connect the button
+
+You will need to insert button's 2 (of 4 total) contacts into the board so that 2 contacts will be left unused.   
+![IMG_0159](https://github.com/BasedSocialCo/whomane/assets/43514161/6deaba8e-ee26-49e8-9cb8-714c6e88eb6f)
+
+The pins you will use are 
+
+![IMG_0160](https://github.com/BasedSocialCo/whomane/assets/43514161/34f8ea0c-b3d2-4a6e-ba68-78efeb305924)
+
+
 
 Step 1: unpack your Raspberry pi sugar battery. it should contain 4-5 screws
 
