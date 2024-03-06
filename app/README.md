@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Run ```git clone https://github.com/BasedSocialCo/whomane.git``` in terminal
+
 First, run the development server:
 
 ```bash
