@@ -85,15 +85,7 @@ scp -r <paste_your_copied_path> <your_username_you_provided_before>@raspberrypi:
 ```
 
 
-### 7. Reboot
-
-Reboot your Raspberry Pi:
-
-```
-sudo reboot
-```
-
-### 8. Run the Application
+### 7. Run the Application
 
 fter the reboot, navigate back to the project directory, make the run script executable, and start the application:
 
