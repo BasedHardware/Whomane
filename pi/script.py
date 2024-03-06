@@ -7,6 +7,7 @@ def capture_image(image_path):
     # Define the command to capture an image
     command = ["libcamera-still", "-o", image_path]
 
+
     # Run the command
     try:
         subprocess.run(command, check=True)
@@ -22,5 +23,3 @@ if __name__ == "__main__":
 
     # Capture the image
     capture_image(image_path)
-
-
