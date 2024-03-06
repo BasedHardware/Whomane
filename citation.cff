@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Shevchenko"
+  given-names: "Nik"
+- family-names: "Eisenhauer"
+  given-names: "Zachary"
+- family-names: "Unterslak"
+  given-names: "Shai"
+- family-names: "Ramamoorthi"
+  given-names: "Vigneshwer"
+title: "Whomane"
+version: 0.0.1
+date-released: 2024-3-6
+url: "https://github.com/BasedSocialCo/whomane"
