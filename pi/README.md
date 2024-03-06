@@ -1,17 +1,19 @@
-# Setting up the Raspberry Pi
+# Setting up the Device
 
-# Items Used
+## Items Used
 
-# Creating the Device
+## Creating the Device
 
-# 3D Print (V0)
+## 3D Print (V0)
 
-# Configure Wifi
+# Setting up the software
 
-# Setting Up APIs
+## Configure Wifi
 
-# # Firebase
+## Set Up APIs
 
-# # Facecheck ID
+### Firebase
 
-# Set start.py to run on boot
+### Facecheck ID
+
+## Set start.py to run on boot
