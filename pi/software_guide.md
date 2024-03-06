@@ -68,7 +68,7 @@ Download the Raspberry Pi OS Lite (64-bit) image from the following link:
 Open a terminal on your computer and connect to your Raspberry Pi using SSH:
 
 ```
-ssh username@raspberrypi.local
+ssh <yourusername>@raspberrypi.local
 ```
 
 Replace `username` with the username you set up earlier. Accept the prompt and enter your password when asked.
@@ -79,7 +79,7 @@ From a terminal on your computer (not connected to your
 Raspberry Pi), transfer the project folder to your Raspberry Pi:
 
 ```
-scp -r /path/to/your/project/pi username@raspberrypi:~/
+scp -r /path/to/your/project/pi <yourusername>@raspberrypi:~/
 ```
 
 
