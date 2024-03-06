@@ -81,7 +81,7 @@ Raspberry Pi), transfer the project that [you should have installed](https://git
 Copy the path of the whomane/pi folder (how to copy on [Mac](https://support.apple.com/en-gb/guide/mac-help/mchlp1774/mac#:~:text=Copy%20a%20folder's%20pathname%3A%20Control,Copy%20%E2%80%9Cfolder%E2%80%9D%20as%20Pathname.) and [Windows](https://www.howtogeek.com/670447/how-to-copy-the-full-path-of-a-file-on-windows-10/#:~:text=To%20copy%20the%20full%20path%20of%20a%20file%20or%20folder,in%20the%20File%20Explorer%20toolbar.)
 Then run:
 ```
-scp -r <paste_your_copied_path< <your_username_you_provided_before>@raspberrypi:~/
+scp -r <paste_your_copied_path> <your_username_you_provided_before>@raspberrypi:~/
 ```
 
 
