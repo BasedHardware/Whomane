@@ -38,7 +38,7 @@ This guide provides step-by-step instructions for assembling hardware device for
 
 You have a Raspberry Pi board that looks like this ![zero2-close-up](https://github.com/kodjima33/ADeus/assets/43514161/c9f5ce13-9e63-48ca-b930-4f13501b4de4)
 
-Your goal is to attach a the camera to it via a short ribbon cable that you received along with your raspberry Pi Kit.
+Your goal is to attach the camera via a short ribbon cable that you received along with your raspberry Pi Kit.
 
 [Here is a more detailed video](https://www.youtube.com/watch?v=zFAX4pH1BPA)
 
@@ -85,7 +85,7 @@ As the last step, attach one of the magnets to the back of your battery and keep
 
 ![IMG_0164](https://github.com/BasedSocialCo/whomane/assets/43514161/055cd708-7cbe-417a-b4e9-df9b3fda2466)
 
-### 3. Attach Pi sugar battery to raspberry Pi
+### 4. Attach Pi sugar battery to raspberry Pi
 
 Step 1: unpack your Raspberry pi sugar battery. it should contain 4-5 screws
 
@@ -95,28 +95,7 @@ Step 2: Following [this video](https://www.youtube.com/watch?v=XA4j9hRiFmw), att
 
 
 
-### 5. Assemble everything
-
-In my example, I put everything in the default case of the Vilros Kit. It looks ugly but this is what we will use for V1. Alternatively, you can 3d-print your own case.
-
-- Insert the SD card into your Raspberry Pi Zero W.
-- Power on the device to check if everything works (lights should blink)
-  You can turn on/off the power on your Pi Sugar board (it has a small switch). Charging should also be done via Pi Sugar. If you charge the board itself, the battery will not be charged.
-- Put everything in the case
-
-  ![IMG_0101](https://github.com/kodjima33/ADeus/assets/43514161/27af8e8f-63ce-4716-8c50-f9a07a573fd4)
-
-- put microphone+wires through the lid's hole outside (this way you'll ensure the best audio)
-  
-   ![IMG_0102](https://github.com/kodjima33/ADeus/assets/43514161/9f60c6b4-0b2c-4e60-bb4a-8adeadb86542)
-
-- Take a scotch tape to attach the lid to the box. It wouldn't fit by default because of our battery
-- Put some rope/chain through the lid 
-
-Congratulations! You have successfully set up your Raspberry Pi Zero W for development with your project.
-
-![IMG_0104](https://github.com/kodjima33/ADeus/assets/43514161/13763100-3d34-471d-bb5f-379e452ea971)
 
 
 ### 6. Install software and run
-Navigate to [Raspberry Pi Zero W Setup Guide](https://docs.adeus.ai/guides/setup_raspberry_pi_zero.html) to install the software and run 
+Navigate to Software guide to install software on your Pin and run it
