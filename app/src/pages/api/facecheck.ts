@@ -144,7 +144,7 @@ export default async function handler(
         // const image_base64 = im.base64; // thumbnail image encoded as base64 string
         return { score, url };
       });
-      addSocialsToPersonDocument(formatted_urls, personDocID);
+      await addSocialsToPersonDocument(formatted_urls, personDocID);
       res.status(200).json(formatted_urls);
     } else {
       res.status(500).json({ error });

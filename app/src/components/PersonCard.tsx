@@ -4,13 +4,12 @@ import Microlink from "@microlink/react";
 // import { db } from '../lib/firebase'; // Adjust this import according to your Firebase config setup
 // import { doc, updateDoc } from 'firebase/firestore';
 
-function PersonCard({ id, time, socials, updatePersonDoc, linkedinSummary, linkedinSummaryAudio, latestQuestion }) {
+function PersonCard({ id, time, socials, updatePersonDoc, linkedinSummary, linkedinSummaryAudio, latestQuestion, imageURL }) {
   const [_linkedinSummary, setLinkedinSummary] = useState(linkedinSummary || '');
   const [_linkedinSummaryAudio, setLinkedinSummaryAudio] = useState(linkedinSummaryAudio || '');
   const [_latestQuestion, setLatestQuestion] = useState(latestQuestion || '');
   const [loading, setLoading] = useState(false);
   const [question, setQuestion] = useState('How would you describe this person in summary?');
-
   const onQuestionChange = (e) => {
     setQuestion(e.target.value);
   };
@@ -59,15 +58,17 @@ function PersonCard({ id, time, socials, updatePersonDoc, linkedinSummary, linke
 
   return (
     <div className="bg-black h-full h-80 mb-10 mt-10 p-6 flex flex-col gap-8">
-      <h1 className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">Your scan ⤵</h1>
+      <img src={imageURL} alt="Person" className="w-20 h-20 object-cover rounded-lg mx-auto" />
+      <h1 className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300 rounded-md">Your scan ⤵</h1>
       <div className="flex flex-wrap justify-center items-start">
-        {socials.slice(0, 6).map((social, index) => (
+        {socials.slice(0, 3).map((social, index) => (
           <Button key={index} className="h-full w-1/4 rounded-full ml-4 mt-4 relative" size="icon" variant="ghost">
-            <span className={`absolute top-2 left-2 rounded-full p-3 z-10 ${social.score >= 90 ? 'bg-green-200' : 'bg-orange-200 '}`}>
-              <p className="text-sm">{social.score}</p>
+            <span className={`absolute top-2 left-2 rounded-full p-3 z-10 ${social.score >= 85 ? 'bg-green-200' : 'bg-orange-200 '}`}>
+              <p className="text-sm font-bold">{social.score}</p>
             </span>
             <div className="w-full max-h-80 overflow-y-scroll">
-              <Microlink size="large" url={social.url}  />
+              <Microlink size="large" url={social.url}  api-key="muMD5YUHis3IZiVQiBNTa2mzESIPqVTy7uAKWs7w" />
+              <span><a className="text-white" href={social.url}>{social.url}</a></span>
             </div>
           </Button>
         ))}
