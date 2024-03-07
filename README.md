@@ -1,10 +1,10 @@
 # Whomane: Open-Source AI Wearable with a Camera
 
 
-No case           |  With case
+
+No Case           |  With case
 :-------------------------:|:-------------------------:
-  ![310396920-beca4999-9af5-41c7-b905-b1149a5a1f20](https://github.com/BasedSocialCo/whomane/assets/43514161/5fbf331a-51cc-45dc-90cc-7a14160f62ca)
-|  ![IMG_0168](https://github.com/BasedSocialCo/whomane/assets/43514161/33ba93d7-f412-4d70-894b-d32aaf721ea7)
+![CleanShot 2024-03-06 at 17 19 58](https://github.com/BasedSocialCo/whomane/assets/43514161/c4422d36-393e-4bb7-b83b-96f24eac2611)| ![IMG_0168](https://github.com/BasedSocialCo/whomane/assets/43514161/33ba93d7-f412-4d70-894b-d32aaf721ea7)
 
 [![Discord Follow](https://dcbadge.vercel.app/api/server/kEXXsnb5b3?style=flat)](https://discord.gg/kEXXsnb5b3) &ensp;
 [![Twitter Follow](https://img.shields.io/twitter/follow/basedsocialco?style=social)](https://twitter.com/basedsocialco) &ensp;
