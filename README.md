@@ -4,7 +4,7 @@
 
 
 
-[![Discord](https://discord.gg/FCVwrwmb) &ensp;
+[![Discord](https://discord.gg/kEXXsnb5b3) &ensp;
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)](https://opensource.org/license/agpl-v3)
 
 Our vision is to make wearable AI accessible to everyone, to use and to build on. Our mission is to provide the tools and support, so that you can focus on what matters.
@@ -31,12 +31,12 @@ Follow these steps to get started with Whomane:
 3. **Build and Deploy**: Follow the build instructions in the BUILD.md file to compile and deploy basedpin on your device. -->
 
 ## Contributing
-[Join our Discord!](https://discord.gg/FCVwrwmb)
+[Join our Discord!](https://discord.gg/kEXXsnb5b3)
 We welcome contributions from the community! If you're interested in improving basedpin, please read our CONTRIBUTING.md file to learn how you can get involved.
 
 ## Support
 
-For open-source support, please open an issue on GitHub and/or ask in our [Discord Community](https://discord.gg/FCVwrwmb). For commercial support, license inquiries, or any other questions, please contact us directly at [zach@everythingbagel.ai](mailto:zach@everythingbagel.ai).
+For open-source support, please open an issue on GitHub and/or ask in our [Discord Community](https://discord.gg/kEXXsnb5b3). For commercial support, license inquiries, or any other questions, please contact us directly at [zach@everythingbagel.ai](mailto:zach@everythingbagel.ai).
 
 ## Disclaimer
 
