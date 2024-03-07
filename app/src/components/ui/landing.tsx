@@ -374,7 +374,7 @@ export const Landing = ({
                       >
                         {loading
                           ? "Processing..."
-                          : "Take photo"}
+                          : "Take photo of your face"}
                       </ShimmerButton>
                     </div>
                   </div>
