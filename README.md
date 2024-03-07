@@ -39,7 +39,7 @@ We welcome contributions from the community! If you're interested in improving b
 
 ## Support
 
-For open-source support, please open an issue on GitHub and/or ask in our [Discord Community](https://discord.gg/kEXXsnb5b3). For commercial support, license inquiries, or any other questions, please contact us directly at [zach@everythingbagel.ai](mailto:zach@everythingbagel.ai).
+For open-source support, please open an issue on GitHub and/or ask in our [Discord Community](https://discord.gg/kEXXsnb5b3). For commercial support, license inquiries, or any other questions, please contact us directly at [team@whomane.com](mailto:team@whomane.com).
 
 
 
@@ -66,4 +66,4 @@ Whomane is available under dual licensing options:
 ### Choosing Your License
 
 - If you wish to contribute to or use Whomane in open-source projects, you are free to do so under the terms of the GPL, as detailed in the LICENSE file.
-- If you require a commercial license for your project or enterprise, please contact us at [zach@everythingbagel.ai](mailto:zach@everythingbagel.ai) to discuss your needs and obtain licensing information.
+- If you require a commercial license for your project or enterprise, please contact us at [team@whomane.com](mailto:team@whomane.com) to discuss your needs and obtain licensing information.
