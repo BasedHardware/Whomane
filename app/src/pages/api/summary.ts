@@ -28,6 +28,7 @@ export default async function handler(req, res) {
     const workflow_id = responseData.id;
 
     console.log('Workflow ID:', workflow_id);
+ 
 
     let finishedRunning= false;
     while (!finishedRunning) {

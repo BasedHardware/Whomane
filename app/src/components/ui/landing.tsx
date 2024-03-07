@@ -81,7 +81,10 @@ export const Landing = ({
   const canvasRef = useRef(null);
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [currentDocId, setCurrentDocId] = useState(null)
+  const [currentDocId, setCurrentDocId] =
+    useState("");
+  const [isMobile, setIsMobile] = useState(false);
+
   const [peopleScanResult, setPeopleScanResult] =
     useState({});
 
@@ -137,7 +140,6 @@ export const Landing = ({
 
   // Sends image data to API
   const sendImageToAPI = async (imageDataUrl) => {
-
     let uuid = localStorage.getItem("userID");
     if (!uuid) {
       uuid = Math.random()
@@ -170,7 +172,10 @@ export const Landing = ({
       imageDataUrl
     );
     const personDocID =
-      await createPersonDocument(uuid, imageURL);
+      (await createPersonDocument(
+        uuid,
+        imageURL
+      )) || "";
 
     try {
       const response = await fetch(
@@ -196,7 +201,6 @@ export const Landing = ({
             setCurrentDocId(personDocID);
           }
         );
-
       } else {
         console.log("error??");
         console.error(data.error);
@@ -210,7 +214,7 @@ export const Landing = ({
 
   const navigateToLink = (url) => {
     window.open(url, "_blank");
-  }
+  };
   // Captures photo from video stream
   const takePhoto = () => {
     setLoading(true);
@@ -247,7 +251,13 @@ export const Landing = ({
     const url = `https://twitter.com/intent/tweet?text=I just used Whomane to scan a person and find their socials. Try it here:&url=${window.location.href}`;
     console.log(url);
     window.open(url, "_blank");
-  }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 768);
+    }
+  }, []);
   return (
     <>
       <div className="container py-6.5 grid gap-6 px-4 md:grid-cols-2 md:gap-8 lg:px-6 lg:py-8.5">
@@ -261,7 +271,14 @@ export const Landing = ({
             </p>
           </div>
           <form className="mt-64 flex justify-center flex-row gap-4">
-            <ShimmerButton className="shadow-2xl" onClick={()=>{navigateToLink("https://github.com/Whomane/Whomane")}}>
+            <ShimmerButton
+              className="shadow-2xl"
+              onClick={() => {
+                navigateToLink(
+                  "https://github.com/Whomane/Whomane"
+                );
+              }}
+            >
               <svg
                 className="w-6 h-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -274,8 +291,15 @@ export const Landing = ({
                 Clone GitHub project
               </span>
             </ShimmerButton>
-            <ShimmerButton className="shadow-2xl" shimmerColor="black" onClick={()=>{navigateToLink("https://discord.gg/CDZKVKDMQV")}}>
-    
+            <ShimmerButton
+              className="shadow-2xl"
+              shimmerColor="black"
+              onClick={() => {
+                navigateToLink(
+                  "https://discord.gg/CDZKVKDMQV"
+                );
+              }}
+            >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                 Join Discord
               </span>
@@ -283,76 +307,95 @@ export const Landing = ({
           </form>
         </div>
         <div className="flex items-center justify-center flex-col">
-          <p className="text-neutral-400 font-bold my-4">
-            Try it for yourself ⤵
+          <p className="text-neutral-400 font-bold my-4 text-center">
+            {loading
+              ? "This could take a minute, please don't refresh..."
+              : isMobile
+              ? "(Currently only works on desktop)"
+              : "Try it for yourself ⤵"}
           </p>
 
-          <div className="border border-gray-200 w-full max-w-sm rounded-lg dark:border-gray-800">
-            <div className="aspect-[1/1] overflow-hidden rounded-lg">
-              <>
-                <div
-                  style={{
-                    position: "relative",
-                    height: "100%",
-                  }}
-                >
-                  <video
-                    ref={videoRef}
-                    autoPlay
-                    style={{
-                      display: image
-                        ? "none"
-                        : "flex",
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      transform:
-                        "rotateY(180deg)",
-                    }}
-                  ></video>
-                  <canvas
-                    ref={canvasRef}
-                    style={{ display: "none" }}
-                    width="640"
-                    height="480"
-                  ></canvas>
+          {!isMobile && (
+            <div className="border border-gray-200 w-full max-w-sm rounded-lg dark:border-gray-800">
+              <div className="aspect-[1/1] overflow-hidden rounded-lg">
+                <>
                   <div
                     style={{
-                      position: "absolute",
-                      bottom: "2%",
-                      left: "50%",
-                      transform:
-                        "translate(-50%, -50%)",
+                      position: "relative",
+                      height: "100%",
                     }}
                   >
-                    <ShimmerButton
-                      shimmerColor={"#000000"}
-                      onClick={takePhoto}
-                      disabled={loading}
+                    <video
+                      ref={videoRef}
+                      autoPlay
+                      style={{
+                        display: image
+                          ? "none"
+                          : "flex",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        transform:
+                          "rotateY(180deg)",
+                      }}
+                    ></video>
+                    <canvas
+                      ref={canvasRef}
+                      style={{ display: "none" }}
+                      width="640"
+                      height="480"
+                    ></canvas>
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: "2%",
+                        left: "50%",
+                        transform:
+                          "translate(-50%, -50%)",
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "10px",
+                      }}
                     >
-                      {loading
-                        ? "Processing..."
-                        : "Take photo"}
-                    </ShimmerButton>
+                      {/* <input
+                      type="email"
+                      placeholder="you@youremail.com"
+                      style={{
+                        padding: "10px",
+                        borderRadius: "30px",
+                        border: "1px solid #000"
+                      }}
+                    /> */}
+                      <ShimmerButton
+                        shimmerColor={"#000000"}
+                        onClick={takePhoto}
+                        disabled={loading}
+                      >
+                        {loading
+                          ? "Processing..."
+                          : "Take photo"}
+                      </ShimmerButton>
+                    </div>
                   </div>
-                </div>
-                {image && (
-                  <Image
-                    src={image}
-                    alt="Captured"
-                    width={640}
-                    height={480}
-                    style={{
-                      transform:
-                        "rotateY(180deg)",
-                    }}
-                    loader={({ src }) => src}
-                    unoptimized // since you're handling optimization
-                  />
-                )}
-              </>
+                  {image && (
+                    <Image
+                      src={image}
+                      alt="Captured"
+                      width={640}
+                      height={480}
+                      style={{
+                        transform:
+                          "rotateY(180deg)",
+                      }}
+                      loader={({ src }) => src}
+                      unoptimized // since you're handling optimization
+                    />
+                  )}
+                </>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
@@ -386,26 +429,29 @@ export const Landing = ({
                 ] || ""
               }
               imageURL={
-                peopleScanResult?.[
-                  "imageURL"
-                ] || ""
+                peopleScanResult?.["imageURL"] ||
+                ""
               }
               updatePersonDoc={updatePersonDoc}
               {...peopleScanResult}
             />
           )}
-             
       </main>
+
       {peopleScanResult &&
-          Object.keys(peopleScanResult).length !==
-            0 && (
-      <div className="flex justify-center pb-8">
-        <ShimmerButton className="shadow-2xl"  onClick={handleShareOnTwitter}>
-          <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-            Share on Twitter
-          </span>
-        </ShimmerButton>
-      </div>)}
+        Object.keys(peopleScanResult).length !==
+          0 && (
+          <div className="flex justify-center pb-8">
+            <ShimmerButton
+              className="shadow-2xl"
+              onClick={handleShareOnTwitter}
+            >
+              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                Share on Twitter
+              </span>
+            </ShimmerButton>
+          </div>
+        )}
     </>
   );
 };
