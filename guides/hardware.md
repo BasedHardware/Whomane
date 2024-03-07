@@ -1,20 +1,4 @@
----
-title: How to Assemble Hardware
-description: add description
-layout: default
-parent: How to Guides
----
 
-# Raspberry Pi Zero W Setup Guide
-{: .no_toc }
-
-## How to Assemble Hardware
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
 
 ![IMG_0156](https://github.com/BasedSocialCo/whomane/assets/43514161/f5004a26-3a2f-4e5c-a229-564b3f80a556)
 
