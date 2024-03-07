@@ -1,7 +1,7 @@
 # Whomane: Open-Source AI Wearable with a Camera
 
 
-In a case           |  Without case
+No case           |  With case
 :-------------------------:|:-------------------------:
 ![CleanShot 2024-03-05 at 23 15 42](https://github.com/BasedSocialCo/whomane/assets/43514161/cfe0f7c4-5f19-4e64-92e8-98d079b0398e)  |  ![IMG_0168](https://github.com/BasedSocialCo/whomane/assets/43514161/33ba93d7-f412-4d70-894b-d32aaf721ea7)
 
