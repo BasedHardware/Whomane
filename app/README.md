@@ -10,8 +10,12 @@ To get the project up and running on your local machine, follow these steps:
     ```bash
     git clone https://github.com/BasedSocialCo/whomane.git
     ```
+1. Target the app directory:
+    ```bash
+    cd app
+    ```
 
-2. Install dependencies:
+3. Install dependencies:
     ```bash
     npm install
     # or
@@ -22,7 +26,7 @@ To get the project up and running on your local machine, follow these steps:
     bun install
     ```
 
-3. Start the development server:
+4. Start the development server:
     ```bash
     npm run dev
     # or
@@ -33,7 +37,7 @@ To get the project up and running on your local machine, follow these steps:
     bun dev
     ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
 ## Environment Variables
 
