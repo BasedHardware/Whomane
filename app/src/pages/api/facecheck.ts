@@ -118,22 +118,23 @@ response = response.data;
   while (true) {
     response = await axios.post(site+'/api/search', json_data, { headers: headers });
     response = response.data;
+    console.log(JSON.stringify(response));
     // @ts-ignore
 
-    if (response.error) {
+    if (response?.error) {
         // @ts-ignore
 
-      return [`${response.error} (${response.code})`, null];
+      return [`${response.error} (${response?.code})`, null];
     }// @ts-ignore
 
-    if (response.output) {
+    if (response?.output) {
         // @ts-ignore
 
-      return [null, response.output.items];
+      return [null, response?.output?.items];
     }
     // @ts-ignore
 
-    console.log(`${response.message} progress: ${response.progress}%`);
+    console.log(`${response?.message} progress: ${response?.progress}%`);
     await new Promise(r => setTimeout(r, 1000));
   }
 };
