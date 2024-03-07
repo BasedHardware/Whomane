@@ -17,7 +17,7 @@ cd into the app directory
     ```bash
 cd app
     ```
-
+then run
     ```bash
     npm install
     # or
