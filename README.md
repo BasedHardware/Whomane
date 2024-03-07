@@ -41,6 +41,14 @@ We welcome contributions from the community! If you're interested in improving b
 
 For open-source support, please open an issue on GitHub and/or ask in our [Discord Community](https://discord.gg/kEXXsnb5b3). For commercial support, license inquiries, or any other questions, please contact us directly at [zach@everythingbagel.ai](mailto:zach@everythingbagel.ai).
 
+
+
+
+
+
+
+
+
 ## Disclaimer
 
 Please note that the pin is a prototype project and is provided "as is", without warranty of any kind. Use of the device should comply with all local laws and regulations concerning privacy and data protection.
