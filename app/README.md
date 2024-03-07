@@ -18,6 +18,7 @@ cd into the app directory
 cd app
     ```
 then run
+
     ```bash
     npm install
     # or
