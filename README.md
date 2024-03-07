@@ -29,8 +29,8 @@ Follow these steps to get started with Whomane:
 
 
 1. [**Clone/Host the Web App**](https://github.com/Whomane/Whomane/blob/main/guides/Software_guide.md) 
-2. [**Buy/Assemble Hardware**](https://github.com/whomane/whomane/guides/hardware.md)
-3. [**Install Software on your hardware**](https://github.com/whomane/guides/software_guide.md)
+2. [**Buy/Assemble Hardware**](https://github.com/Whomane/Whomane/blob/main/guides/hardware.md)
+3. [**Install Software on your hardware**](https://github.com/Whomane/Whomane/blob/main/guides/software_guide.md)
 <!-- 2. **Install Dependencies**: Navigate to the project directory and run `setup.sh` to install necessary dependencies.
 3. **Build and Deploy**: Follow the build instructions in the BUILD.md file to compile and deploy basedpin on your device. -->
 
