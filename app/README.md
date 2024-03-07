@@ -92,6 +92,39 @@ To get the Facecheck API key:
     ```
     NEXT_PUBLIC_FACECHECK_APITOKEN=YOUR_FACECHECK_APITOKEN
     ```
+# Deploying the API and frontend
+You'll need to deploy this to vercel or similar, because the API endpoint that is used by the Raspberry Pi to process the image is contained within this next.js project `(/api/facecheck)`
+
+## 1.. Sign Up or Log In to Vercel
+
+If you haven't already, you'll need to create an account on Vercel. You can sign up using your email or GitHub, GitLab, or Bitbucket account, which makes it easier to deploy projects hosted on these services.
+
+## 2. Install Vercel CLI (Optional)
+
+While you can deploy using the Vercel web interface, installing the Vercel CLI provides more flexibility and control. Install it globally using npm or yarn:
+
+```sh
+npm i -g vercel
+```
+
+## 3. Deploying Your Project
+There are two main ways to deploy: using the Vercel CLI or directly through the Vercel Dashboard.
+
+### Using the Vercel CLI:
+Open your terminal and navigate to your project directory.
+Run vercel to initiate the deployment. If you're not logged in, the CLI will prompt you to authenticate.
+Follow the CLI prompts to set up your project. The CLI will automatically detect the type of project and suggest settings. You can override these as needed.
+Once configured, Vercel will deploy your project, and you'll receive a URL to access your live site.
+
+### Using the Vercel Dashboard:
+Log in to the Vercel Dashboard.
+Click on the "New Project" button.
+You can either import a project from Git or upload your project files directly if it's not hosted on a Git provider.
+Select your project or repository, configure your project settings as needed, and then deploy.
+Vercel will process your project and provide a URL to access your live site.
+css
 
 ## Questions
 Ask in the Discord if you get stuck, we're here to help :)
+
+
