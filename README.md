@@ -1,10 +1,13 @@
 # Whomane: Open-Source AI Wearable with a Camera
 
-![CleanShot 2024-03-05 at 23 15 42](https://github.com/BasedSocialCo/whomane/assets/43514161/cfe0f7c4-5f19-4e64-92e8-98d079b0398e)
 
 
+No Case           |  With case
+:-------------------------:|:-------------------------:
+![CleanShot 2024-03-06 at 17 19 58](https://github.com/BasedSocialCo/whomane/assets/43514161/c4422d36-393e-4bb7-b83b-96f24eac2611)| ![IMG_0168](https://github.com/BasedSocialCo/whomane/assets/43514161/33ba93d7-f412-4d70-894b-d32aaf721ea7)
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/basedsocialco)](https://twitter.com/basedsocialco) &ensp;
+[![Discord Follow](https://dcbadge.vercel.app/api/server/kEXXsnb5b3?style=flat)](https://discord.gg/kEXXsnb5b3) &ensp;
+[![Twitter Follow](https://img.shields.io/twitter/follow/basedsocialco?style=social)](https://twitter.com/basedsocialco) &ensp;
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)](https://opensource.org/license/agpl-v3)
 
 Our vision is to make wearable AI accessible to everyone, to use and to build on. Our mission is to provide the tools and support, so that you can focus on what matters.
@@ -24,19 +27,27 @@ Be apart of the revolution! **Whomane** is here to stay, at the forefront of AI 
 Follow these steps to get started with Whomane:
 
 0. Run ``` git clone https://github.com/BasedSocialCo/whomane.git ``` in terminal
-1. [**Clone/install the project**](https://github.com/BasedSocialCo/whomane/tree/main/app#readme) 
+1. [**Clone/Host the Web App**](https://github.com/BasedSocialCo/whomane/tree/main/app#readme) 
 2. [**Buy/Assemble Hardware**](https://github.com/BasedSocialCo/whomane/blob/main/pi/hardware.md)
 3. [**Install Software on your hardware**](https://github.com/BasedSocialCo/whomane/blob/main/pi/software_guide.md)
 <!-- 2. **Install Dependencies**: Navigate to the project directory and run `setup.sh` to install necessary dependencies.
 3. **Build and Deploy**: Follow the build instructions in the BUILD.md file to compile and deploy basedpin on your device. -->
 
 ## Contributing
-
+[Join our Discord!](https://discord.gg/kEXXsnb5b3)
 We welcome contributions from the community! If you're interested in improving basedpin, please read our CONTRIBUTING.md file to learn how you can get involved.
 
 ## Support
 
-For open-source support, please open an issue on GitHub. For commercial support, license inquiries, or any other questions, please contact us directly at [zach@everythingbagel.ai](mailto:zach@everythingbagel.ai).
+For open-source support, please open an issue on GitHub and/or ask in our [Discord Community](https://discord.gg/kEXXsnb5b3). For commercial support, license inquiries, or any other questions, please contact us directly at [zach@everythingbagel.ai](mailto:zach@everythingbagel.ai).
+
+
+
+
+
+
+
+
 
 ## Disclaimer
 

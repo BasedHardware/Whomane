@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json',
-        'X-Api-Key': process.env.LEAP_API_KEY || '',
+        'X-Api-Key': process.env.NEXT_PUBLIC_LEAP_API_KEY || '',
       }),
       body: JSON.stringify({
         workflow_id: "wkf_0CzZBKTedkvVrT",

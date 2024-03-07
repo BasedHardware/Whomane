@@ -39,9 +39,13 @@ export default function NewPhoto() {
 
 
     const sendImageToAPI = async (imageDataUrl) => {
+        console.log('Sending image to API');
         setLoading(true);
+        // const url ="https://whomane-sand.vercel.app/api/facecheck"
+        const url ="/api/facecheck"
+
         try {
-          const response = await fetch('/api/facecheck', {
+          const response = await fetch(url, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -51,7 +55,7 @@ export default function NewPhoto() {
           const data = await response.json();
           console.log(data);
           if (response.ok) {
-            window.location.href = '/network';
+            // window.location.href = '/network';
           } else {
             console.error(data.error);
           }
@@ -70,9 +74,9 @@ export default function NewPhoto() {
         }
         const imageDataUrl = (canvasRef.current as HTMLCanvasElement).toDataURL('image/png');
         sendImageToAPI(imageDataUrl);
-        stopVideo();
+        // stopVideo();
         setImage(imageDataUrl);
-        window.location.href = '/network';
+        // window.location.href = '/network';
       }
 
    
