@@ -5,7 +5,7 @@ No case           |  With case
 :-------------------------:|:-------------------------:
 ![CleanShot 2024-03-05 at 23 15 42](https://github.com/BasedSocialCo/whomane/assets/43514161/cfe0f7c4-5f19-4e64-92e8-98d079b0398e)  |  ![IMG_0168](https://github.com/BasedSocialCo/whomane/assets/43514161/33ba93d7-f412-4d70-894b-d32aaf721ea7)
 
-[![Discord Follow](https://dcbadge.vercel.app/api/server/Whomane?style=flat)](https://discord.gg/kEXXsnb5b3) &ensp;
+[![Discord Follow](https://dcbadge.vercel.app/api/server/kEXXsnb5b3?style=flat)](https://discord.gg/kEXXsnb5b3) &ensp;
 [![Twitter Follow](https://img.shields.io/twitter/follow/basedsocialco?style=social)](https://twitter.com/basedsocialco) &ensp;
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)](https://opensource.org/license/agpl-v3)
 
