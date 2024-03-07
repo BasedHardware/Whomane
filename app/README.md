@@ -68,7 +68,7 @@ The first few environment variables are for Firebase configuration. Follow these
     };
     ```
 
-6. Populate your `.env.local` file with these values:
+6. In your project directory, open the file .env.eample and populate it with these values:
 
     ```
     NEXT_PUBLIC_API_KEY=YOUR_API_KEY
