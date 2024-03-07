@@ -77,7 +77,7 @@ The first few environment variables are for Firebase configuration. Follow these
     NEXT_PUBLIC_STORAGE_BUCKET=YOUR_STORAGE_BUCKET
     NEXT_PUBLIC_MESSAGING_SENDER_ID=YOUR_MESSAGING_SENDER_ID
     NEXT_PUBLIC_APP_ID=YOUR_APP_ID
-    NEXT_PUBLIC_MEASUREMENT_ID=YOUR_MEASUREMENT_ID
+    NEXT_PUBLIC_MEASUREMENT_ID=YOUR_MEASUREMENT_ID (if you don't see this, enable Google analytics in Firebase)
     ```
 
 ### Leap AI (optional)
@@ -86,7 +86,7 @@ The `NEXT_PUBLIC_LEAP_API_KEY` check out https://www.tryleap.ai/ to get an API k
 
 ### Obtaining Facecheck API Key
 
-Note: you'll have to pay in btc to get credits for this API
+Note: you'll have to pay in crypto to get credits for this API
 
 To get the Facecheck API key:
 
