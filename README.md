@@ -28,7 +28,7 @@ Be apart of the revolution! **Whomane** is here to stay, at the forefront of AI 
 Follow these steps to get started with Whomane:
 
 
-1. [**Clone/Host the Web App**](https://github.com/whomane/whomane/guides/app#readme) 
+1. [**Clone/Host the Web App**](https://github.com/Whomane/Whomane/blob/main/guides/Software_guide.md) 
 2. [**Buy/Assemble Hardware**](https://github.com/whomane/whomane/guides/hardware.md)
 3. [**Install Software on your hardware**](https://github.com/whomane/guides/software_guide.md)
 <!-- 2. **Install Dependencies**: Navigate to the project directory and run `setup.sh` to install necessary dependencies.
