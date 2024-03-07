@@ -25,9 +25,6 @@ const tweets = [
   <TweetCard key="1764485042632380445" id="1764485042632380445" className="shadow-2xl text-neutral-400" />
 ];
 
-const firstRow = tweets.slice(0, tweets.length / 2);
-const secondRow = tweets.slice(tweets.length / 2);
-
 export const Landing = ({
   pathLengths,
   title,
@@ -174,8 +171,8 @@ export const Landing = ({
       </div>
     </div>
     </div> */}
-    <Marquee pauseOnHover className="[--duration:20s] p-10">
-      {firstRow.map((tweet) => (
+    <Marquee pauseOnHover className="[--duration:20s] p-4">
+      {tweets.map((tweet) => (
         tweet
       ))}
     </Marquee>
