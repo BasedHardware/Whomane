@@ -12,6 +12,12 @@ To get the project up and running on your local machine, follow these steps:
     ```
 
 2. Install dependencies:
+
+cd into the app directory
+    ```bash
+cd app
+    ```
+
     ```bash
     npm install
     # or
