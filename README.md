@@ -7,8 +7,9 @@ No Case           |  With case
 ![CleanShot 2024-03-06 at 17 19 58](https://github.com/BasedSocialCo/whomane/assets/43514161/c4422d36-393e-4bb7-b83b-96f24eac2611)| ![IMG_0168](https://github.com/BasedSocialCo/whomane/assets/43514161/33ba93d7-f412-4d70-894b-d32aaf721ea7)
 
 [![Discord Follow](https://dcbadge.vercel.app/api/server/kEXXsnb5b3?style=flat)](https://discord.gg/kEXXsnb5b3) &ensp;
-[![Twitter Follow](https://img.shields.io/twitter/follow/basedsocialco?style=social)](https://twitter.com/basedsocialco) &ensp;
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)](https://opensource.org/license/agpl-v3)
+
+## [See online Demo](http://whomane.com)
 
 Our vision is to make wearable AI accessible to everyone, to use and to build on. Our mission is to provide the tools and support, so that you can focus on what matters.
 
@@ -26,10 +27,10 @@ Be apart of the revolution! **Whomane** is here to stay, at the forefront of AI 
 
 Follow these steps to get started with Whomane:
 
-0. Run ``` git clone https://github.com/BasedSocialCo/whomane.git ``` in terminal
-1. [**Clone/Host the Web App**](https://github.com/BasedSocialCo/whomane/tree/main/app#readme) 
-2. [**Buy/Assemble Hardware**](https://github.com/BasedSocialCo/whomane/blob/main/pi/hardware.md)
-3. [**Install Software on your hardware**](https://github.com/BasedSocialCo/whomane/blob/main/pi/software_guide.md)
+
+1. [**Clone/Host the Web App**](https://github.com/Whomane/Whomane/blob/main/guides/Software_guide.md) 
+2. [**Buy/Assemble Hardware**](https://github.com/Whomane/Whomane/blob/main/guides/hardware.md)
+3. [**Install Software on your hardware**](https://github.com/Whomane/Whomane/blob/main/guides/install_software_on_hardware_guide.md)
 <!-- 2. **Install Dependencies**: Navigate to the project directory and run `setup.sh` to install necessary dependencies.
 3. **Build and Deploy**: Follow the build instructions in the BUILD.md file to compile and deploy basedpin on your device. -->
 
@@ -39,7 +40,7 @@ We welcome contributions from the community! If you're interested in improving b
 
 ## Support
 
-For open-source support, please open an issue on GitHub and/or ask in our [Discord Community](https://discord.gg/kEXXsnb5b3). For commercial support, license inquiries, or any other questions, please contact us directly at [zach@everythingbagel.ai](mailto:zach@everythingbagel.ai).
+For open-source support, please open an issue on GitHub and/or ask in our [Discord Community](https://discord.gg/kEXXsnb5b3). For commercial support, license inquiries, or any other questions, please contact us directly at [team@whomane.com](mailto:team@whomane.com).
 
 
 
@@ -66,4 +67,4 @@ Whomane is available under dual licensing options:
 ### Choosing Your License
 
 - If you wish to contribute to or use Whomane in open-source projects, you are free to do so under the terms of the GPL, as detailed in the LICENSE file.
-- If you require a commercial license for your project or enterprise, please contact us at [zach@everythingbagel.ai](mailto:zach@everythingbagel.ai) to discuss your needs and obtain licensing information.
+- If you require a commercial license for your project or enterprise, please contact us at [team@whomane.com](mailto:team@whomane.com) to discuss your needs and obtain licensing information.
