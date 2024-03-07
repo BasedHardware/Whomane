@@ -3,7 +3,7 @@
 ![CleanShot 2024-03-05 at 23 15 42](https://github.com/BasedSocialCo/whomane/assets/43514161/cfe0f7c4-5f19-4e64-92e8-98d079b0398e)
 
 
-[![Discord Follow](https://dcbadge.vercel.app/api/server/autogpt?style=flat)](https://discord.gg/kEXXsnb5b3) &ensp;
+[![Discord Follow](https://dcbadge.vercel.app/api/server/whomane?style=flat)](https://discord.gg/kEXXsnb5b3) &ensp;
 [![Twitter Follow](https://img.shields.io/twitter/follow/basedsocialco?style=social)](https://twitter.com/basedsocialco) &ensp;
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)](https://opensource.org/license/agpl-v3)
 
