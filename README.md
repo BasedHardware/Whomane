@@ -24,7 +24,7 @@ Be apart of the revolution! **Whomane** is here to stay, at the forefront of AI 
 Follow these steps to get started with Whomane:
 
 0. Run ``` git clone https://github.com/BasedSocialCo/whomane.git ``` in terminal
-1. [**Clone/install the project**](https://github.com/BasedSocialCo/whomane/tree/main/app#readme) 
+1. [**Clone/Host the Web App**](https://github.com/BasedSocialCo/whomane/tree/main/app#readme) 
 2. [**Buy/Assemble Hardware**](https://github.com/BasedSocialCo/whomane/blob/main/pi/hardware.md)
 3. [**Install Software on your hardware**](https://github.com/BasedSocialCo/whomane/blob/main/pi/software_guide.md)
 <!-- 2. **Install Dependencies**: Navigate to the project directory and run `setup.sh` to install necessary dependencies.
