@@ -9,7 +9,9 @@ No Case           |  With case
 [![Discord Follow](https://dcbadge.vercel.app/api/server/kEXXsnb5b3?style=flat)](https://discord.gg/kEXXsnb5b3) &ensp;
 [![Twitter Follow](https://img.shields.io/twitter/follow/basedsocialco?style=social)](https://twitter.com/basedsocialco) &ensp;
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue)](https://opensource.org/license/agpl-v3)
+
 [See online Demo](https://whomane.com)
+
 Our vision is to make wearable AI accessible to everyone, to use and to build on. Our mission is to provide the tools and support, so that you can focus on what matters.
 
 Be apart of the revolution! **Whomane** is here to stay, at the forefront of AI hardware innovation.
