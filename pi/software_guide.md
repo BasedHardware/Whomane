@@ -84,8 +84,12 @@ Then run:
 scp -r <paste_your_copied_path> <your_username_you_provided_before>@raspberrypi:~/
 ```
 
+### 7. Update the API endpoint to use your own deployed Vercel-hosted backend (see [app README]("https://github.com/BasedSocialCo/whomane/blob/main/app/README.md") )
+In `search.py` update the base_url on the /api/facecheck call to your deployed endpoint. It should be something like this 
+`base_url = "https://whomane-sand-123.vercel.app/api/facecheck"`
 
-### 7. Run the Application
+
+### 8. Run the Application
 
 fter the reboot, navigate back to the project directory, make the run script executable, and start the application:
 
@@ -94,10 +98,10 @@ cd pi
 ```
 
 ```
-python start.py
+sudp python start.py
 ```
 
-### 8. Setup auto-run
+### 9. Setup auto-run
 
 Congratulations! You have successfully set up your Raspberry Pi Zero W for development with your project.
 
