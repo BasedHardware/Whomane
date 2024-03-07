@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import Microlink from "@microlink/react";
 // import { db } from '../lib/firebase'; // Adjust this import according to your Firebase config setup
@@ -9,13 +9,14 @@ function PersonCard({ id, time, socials, updatePersonDoc, linkedinSummary, linke
   const [_linkedinSummaryAudio, setLinkedinSummaryAudio] = useState(linkedinSummaryAudio || '');
   const [_latestQuestion, setLatestQuestion] = useState(latestQuestion || '');
   const [loading, setLoading] = useState(false);
-  const [question, setQuestion] = useState('');
+  const [question, setQuestion] = useState('How would you describe this person in summary?');
 
   const onQuestionChange = (e) => {
     setQuestion(e.target.value);
   };
 
   const getLinkedinSummary = async () => {
+    console.log('Getting linkedin summary');
     setLoading(true);
     fetch('/api/summary', {
       method: 'POST',
@@ -41,7 +42,7 @@ function PersonCard({ id, time, socials, updatePersonDoc, linkedinSummary, linke
 
         setLinkedinSummary(data.linkedinSummary.summary);
         setLinkedinSummaryAudio(data.linkedinSummary.audio);
-        setLatestQuestion(question);
+        // setLatestQuestion(question);
         setLoading(false);
       })
       .catch((error) => {
@@ -50,27 +51,31 @@ function PersonCard({ id, time, socials, updatePersonDoc, linkedinSummary, linke
       });
   };
 
+  useEffect(() => {
+    if (!_linkedinSummary) {
+      getLinkedinSummary();
+    }
+  }, []);
+
   return (
-    <div className="bg-white w-full h-full h-80 mb-10 mt-10 p-6 flex flex-col gap-8">
-      <h1 className="font-bold">Scanned on {time} </h1>
-      <div className="flex flex-wrap justify-start items-start">
+    <div className="bg-black h-full h-80 mb-10 mt-10 p-6 flex flex-col gap-8">
+      <h1 className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">Your scan</h1>
+      <div className="flex flex-wrap justify-center items-start">
         {socials.slice(0, 6).map((social, index) => (
           <Button key={index} className="h-full w-1/4 rounded-full ml-4 mt-4 relative" size="icon" variant="ghost">
             <span className={`absolute top-2 left-2 rounded-full p-3 z-10 ${social.score >= 90 ? 'bg-green-200' : 'bg-orange-200 '}`}>
               <p className="text-sm">{social.score}</p>
             </span>
             <div className="w-full max-h-80 overflow-y-scroll">
-              <Microlink url={social.url}  />
+              <Microlink size="large" url={social.url}  />
             </div>
           </Button>
         ))}
       </div>
-      <input placeholder="Ask me a question" value={question} onChange={onQuestionChange}></input>
-      <Button onClick={getLinkedinSummary} className="bg-black text-white rounded-full ml-10 mt-10 w-40" size="icon" variant="ghost">
-        {loading ? <span>Researching person...</span> : <span>Ask question</span>}
-      </Button>
-      {latestQuestion && <p className="font-bold text-lg">{latestQuestion}</p>}
-      {linkedinSummary && <p>{linkedinSummary}</p>}
+      {false && <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">Generating summary about person...</p>}
+
+      {latestQuestion && <p className="font-bold text-lg text-white">{latestQuestion}</p>}
+      {linkedinSummary && <p className="text-white">{linkedinSummary}</p>}
       {linkedinSummaryAudio && (
         <audio controls>
           <source src={linkedinSummaryAudio} type="audio/mpeg" />
