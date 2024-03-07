@@ -13,13 +13,11 @@ To get the project up and running on your local machine, follow these steps:
 
 2. Install dependencies:
 
-cd into the app directory
     ```bash
-cd app
-    ```
-then run
+    # cd into the app directory
+    cd app
 
-    ```bash
+    # then run
     npm install
     # or
     yarn
