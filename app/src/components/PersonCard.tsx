@@ -59,7 +59,7 @@ function PersonCard({ id, time, socials, updatePersonDoc, linkedinSummary, linke
 
   return (
     <div className="bg-black h-full h-80 mb-10 mt-10 p-6 flex flex-col gap-8">
-      <h1 className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">Your scan</h1>
+      <h1 className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">Your scan ⤵</h1>
       <div className="flex flex-wrap justify-center items-start">
         {socials.slice(0, 6).map((social, index) => (
           <Button key={index} className="h-full w-1/4 rounded-full ml-4 mt-4 relative" size="icon" variant="ghost">
@@ -74,7 +74,7 @@ function PersonCard({ id, time, socials, updatePersonDoc, linkedinSummary, linke
       </div>
       {false && <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">Generating summary about person...</p>}
 
-      {latestQuestion && <p className="font-bold text-lg text-white">{latestQuestion}</p>}
+      {latestQuestion && <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">Summary about person:</p>}
       {linkedinSummary && <p className="text-white">{linkedinSummary}</p>}
       {linkedinSummaryAudio && (
         <audio controls>

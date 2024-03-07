@@ -34,7 +34,7 @@ if (!getApps().length) {
 const db = getFirestore();
 
 
-export const createPersonDocument = async (userID, imageURL="") => {
+export const createPersonDocument = async (userID, imageURL) => {
   console.log('trying to create person doc with '+ userID +" and "+ imageURL)
   try {
     const peopleCollection = collection(db, "people");
@@ -42,7 +42,7 @@ export const createPersonDocument = async (userID, imageURL="") => {
       time: serverTimestamp(),
       status: 'processing',
       userID: userID,
-      imageURL: imageURL,
+      imageURL: imageURL || '',
     });
 
     console.log("Document created with ID: ", docRef.id);

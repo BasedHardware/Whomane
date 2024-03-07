@@ -21,6 +21,7 @@ export function GoogleGeminiEffectDemo() {
       className="min-h-[100vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
       ref={ref}
     >
+      // @ts-ignore
       <Landing
         pathLengths={[
           pathLengthFirst,
@@ -29,6 +30,9 @@ export function GoogleGeminiEffectDemo() {
           pathLengthFourth,
           pathLengthFifth,
         ]}
+        title="Some Title"
+        description="Some Description"
+        className="Some Class Name"
       />
     </div>
   );
