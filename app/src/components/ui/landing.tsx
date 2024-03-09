@@ -1,15 +1,8 @@
 import { cn } from "@/lib/utils";
-import {
-  motion,
-  MotionValue,
-} from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import React, {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { TweetCard } from "@/components/TweetCard";
 import ShimmerButton from "@/components/magicui/shimmer-button";
@@ -71,49 +64,32 @@ const tweets = [
   />,
 ];
 
-export const Landing = ({
-  pathLengths,
-  title,
-  description,
-  className,
-}) => {
+export const Landing = ({ pathLengths, title, description, className }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef(null);
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [currentDocId, setCurrentDocId] =
-    useState("");
+  const [currentDocId, setCurrentDocId] = useState("");
   const [isMobile, setIsMobile] = useState(false);
 
-  const [peopleScanResult, setPeopleScanResult] =
-    useState({});
+  const [peopleScanResult, setPeopleScanResult] = useState({});
 
   // Starts video stream
   const startVideo = async () => {
     try {
-      const stream =
-        await navigator.mediaDevices.getUserMedia(
-          { video: true }
-        );
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
       }
     } catch (err) {
-      console.error(
-        "Error accessing the camera",
-        err
-      );
+      console.error("Error accessing the camera", err);
     }
   };
 
   // Stops video stream
   const stopVideo = () => {
-    if (
-      videoRef.current &&
-      videoRef.current.srcObject
-    ) {
-      const stream = videoRef.current
-        .srcObject as MediaStream;
+    if (videoRef.current && videoRef.current.srcObject) {
+      const stream = videoRef.current.srcObject as MediaStream;
       const tracks = stream.getTracks();
 
       tracks.forEach((track) => {
@@ -125,16 +101,12 @@ export const Landing = ({
   };
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(
-      window.location.search
-    );
+    const urlParams = new URLSearchParams(window.location.search);
     const docId = urlParams.get("docId");
     if (docId) {
-      getPersonFromFirestore(docId).then(
-        (finalData) => {
-          setPeopleScanResult(finalData);
-        }
-      );
+      getPersonFromFirestore(docId).then((finalData) => {
+        setPeopleScanResult(finalData);
+      });
     }
   }, [currentDocId]);
 
@@ -142,65 +114,45 @@ export const Landing = ({
   const sendImageToAPI = async (imageDataUrl) => {
     let uuid = localStorage.getItem("userID");
     if (!uuid) {
-      uuid = Math.random()
-        .toString(36)
-        .substring(7);
+      uuid = Math.random().toString(36).substring(7);
       localStorage.setItem("userID", uuid);
     } else {
       let numberOfScans = parseInt(
-        localStorage.getItem("numberOfScans") ||
-          "0"
+        localStorage.getItem("numberOfScans") || "0"
       );
       if (numberOfScans === 0) {
-        localStorage.setItem(
-          "numberOfScans",
-          "1"
-        );
+        localStorage.setItem("numberOfScans", "1");
       } else {
         if (numberOfScans >= 2) {
           alert("You're out of scans, sorry!");
           return;
         } else {
-          localStorage.setItem(
-            "numberOfScans",
-            (numberOfScans + 1).toString()
-          );
+          localStorage.setItem("numberOfScans", (numberOfScans + 1).toString());
         }
       }
     }
-    const imageURL = await uploadImage(
-      imageDataUrl
-    );
-    const personDocID =
-      (await createPersonDocument(
-        uuid,
-        imageURL
-      )) || "";
+    const imageURL = await uploadImage(imageDataUrl);
+    const personDocID = (await createPersonDocument(uuid, imageURL)) || "";
 
     try {
-      const response = await fetch(
-        "/api/facecheck",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            imageData: imageDataUrl,
-            personDocID: personDocID,
-          }),
-        }
-      );
+      const response = await fetch("/api/facecheck", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          imageData: imageDataUrl,
+          personDocID: personDocID,
+        }),
+      });
       const data = await response.json();
 
       if (response.status === 200) {
-        getPersonFromFirestore(personDocID).then(
-          (finalData) => {
-            setLoading(false);
-            setPeopleScanResult(finalData);
-            setCurrentDocId(personDocID);
-          }
-        );
+        getPersonFromFirestore(personDocID).then((finalData) => {
+          setLoading(false);
+          setPeopleScanResult(finalData);
+          setCurrentDocId(personDocID);
+        });
       } else {
         console.log("error??");
         console.error(data.error);
@@ -219,22 +171,18 @@ export const Landing = ({
   const takePhoto = () => {
     setLoading(true);
     if (canvasRef.current && videoRef.current) {
-      const context = (
-        canvasRef.current as HTMLCanvasElement
-      ).getContext("2d");
+      const context = (canvasRef.current as HTMLCanvasElement).getContext("2d");
       if (context) {
         context.drawImage(
           videoRef.current,
           0,
           0,
-          (canvasRef.current as HTMLCanvasElement)
-            .width,
-          (canvasRef.current as HTMLCanvasElement)
-            .height
+          (canvasRef.current as HTMLCanvasElement).width,
+          (canvasRef.current as HTMLCanvasElement).height
         );
-        const imageDataUrl = (
-          canvasRef.current as HTMLCanvasElement
-        ).toDataURL("image/png");
+        const imageDataUrl = (canvasRef.current as HTMLCanvasElement).toDataURL(
+          "image/png"
+        );
         sendImageToAPI(imageDataUrl);
         // stopVideo();
         setImage(imageDataUrl);
@@ -274,9 +222,7 @@ export const Landing = ({
             <ShimmerButton
               className="shadow-2xl"
               onClick={() => {
-                navigateToLink(
-                  "https://github.com/Whomane/Whomane"
-                );
+                navigateToLink("https://github.com/Whomane/Whomane");
               }}
             >
               <svg
@@ -293,11 +239,10 @@ export const Landing = ({
             </ShimmerButton>
             <ShimmerButton
               className="shadow-2xl"
-              shimmerColor="black"
+              shimmerColor="rgb(114,137,218)"
+              background="rgb(114,137,218)"
               onClick={() => {
-                navigateToLink(
-                  "https://discord.gg/CDZKVKDMQV"
-                );
+                navigateToLink("https://discord.gg/CDZKVKDMQV");
               }}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
@@ -329,14 +274,11 @@ export const Landing = ({
                       ref={videoRef}
                       autoPlay
                       style={{
-                        display: image
-                          ? "none"
-                          : "flex",
+                        display: image ? "none" : "flex",
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
-                        transform:
-                          "rotateY(180deg)",
+                        transform: "rotateY(180deg)",
                       }}
                     ></video>
                     <canvas
@@ -350,8 +292,7 @@ export const Landing = ({
                         position: "absolute",
                         bottom: "2%",
                         left: "50%",
-                        transform:
-                          "translate(-50%, -50%)",
+                        transform: "translate(-50%, -50%)",
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
@@ -372,9 +313,7 @@ export const Landing = ({
                         onClick={takePhoto}
                         disabled={loading}
                       >
-                        {loading
-                          ? "Processing..."
-                          : "Take photo of your face"}
+                        {loading ? "Processing..." : "Take photo of your face"}
                       </ShimmerButton>
                     </div>
                   </div>
@@ -385,8 +324,7 @@ export const Landing = ({
                       width={640}
                       height={480}
                       style={{
-                        transform:
-                          "rotateY(180deg)",
+                        transform: "rotateY(180deg)",
                       }}
                       loader={({ src }) => src}
                       unoptimized // since you're handling optimization
@@ -400,58 +338,33 @@ export const Landing = ({
       </div>
 
       <main className="flex flex-col bg-black">
-        {peopleScanResult &&
-          Object.keys(peopleScanResult).length !==
-            0 && (
-            <PersonCard
-              key={peopleScanResult?.["id"] || ""}
-              id={peopleScanResult?.["id"] || ""}
-              time={
-                peopleScanResult?.["time"] || ""
-              }
-              socials={
-                peopleScanResult?.["socials"] ||
-                ""
-              }
-              linkedinSummary={
-                peopleScanResult?.[
-                  "linkedinSummary"
-                ] || ""
-              }
-              linkedinSummaryAudio={
-                peopleScanResult?.[
-                  "linkedinSummaryAudio"
-                ] || ""
-              }
-              latestQuestion={
-                peopleScanResult?.[
-                  "latestQuestion"
-                ] || ""
-              }
-              imageURL={
-                peopleScanResult?.["imageURL"] ||
-                ""
-              }
-              updatePersonDoc={updatePersonDoc}
-              {...peopleScanResult}
-            />
-          )}
+        {peopleScanResult && Object.keys(peopleScanResult).length !== 0 && (
+          <PersonCard
+            key={peopleScanResult?.["id"] || ""}
+            id={peopleScanResult?.["id"] || ""}
+            time={peopleScanResult?.["time"] || ""}
+            socials={peopleScanResult?.["socials"] || ""}
+            linkedinSummary={peopleScanResult?.["linkedinSummary"] || ""}
+            linkedinSummaryAudio={
+              peopleScanResult?.["linkedinSummaryAudio"] || ""
+            }
+            latestQuestion={peopleScanResult?.["latestQuestion"] || ""}
+            imageURL={peopleScanResult?.["imageURL"] || ""}
+            updatePersonDoc={updatePersonDoc}
+            {...peopleScanResult}
+          />
+        )}
       </main>
 
-      {peopleScanResult &&
-        Object.keys(peopleScanResult).length !==
-          0 && (
-          <div className="flex justify-center pb-8">
-            <ShimmerButton
-              className="shadow-2xl"
-              onClick={handleShareOnTwitter}
-            >
-              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                Share on Twitter
-              </span>
-            </ShimmerButton>
-          </div>
-        )}
+      {peopleScanResult && Object.keys(peopleScanResult).length !== 0 && (
+        <div className="flex justify-center pb-8">
+          <ShimmerButton className="shadow-2xl" onClick={handleShareOnTwitter}>
+            <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+              Share on Twitter
+            </span>
+          </ShimmerButton>
+        </div>
+      )}
     </>
   );
 };

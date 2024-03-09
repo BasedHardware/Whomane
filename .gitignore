@@ -3,3 +3,7 @@ app/.env
 .node_modules
 .yarn.lock
 .gitgnore
+app/package.json
+app/package-lock.json
+app/.env.example
+app/yarn.lock
