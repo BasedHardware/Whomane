@@ -13,7 +13,7 @@ No Case           |  With case
 
 Our vision is to make wearable AI accessible to everyone, to use and to build on. Our mission is to provide the tools and support, so that you can focus on what matters.
 
-Be apart of the revolution! **Whomane** is here to stay, at the forefront of AI hardware innovation.
+Be a part of the revolution! **Whomane** is here to stay, at the forefront of AI hardware innovation.
 
 <!-- ## Features
 
