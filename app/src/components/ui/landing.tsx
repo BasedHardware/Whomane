@@ -71,7 +71,7 @@ export const Landing = ({ pathLengths, title, description, className }) => {
   const [loading, setLoading] = useState(false);
   const [currentDocId, setCurrentDocId] = useState("");
   const [isMobile, setIsMobile] = useState(false);
-
+  const [error, setError] = useState("");
   const [peopleScanResult, setPeopleScanResult] = useState({});
 
   // Starts video stream
@@ -112,6 +112,7 @@ export const Landing = ({ pathLengths, title, description, className }) => {
 
   // Sends image data to API
   const sendImageToAPI = async (imageDataUrl) => {
+    setError(""); // Clear error message if user presses button again
     let uuid = localStorage.getItem("userID");
     if (!uuid) {
       uuid = Math.random().toString(36).substring(7);
@@ -156,6 +157,7 @@ export const Landing = ({ pathLengths, title, description, className }) => {
       } else {
         console.log("error??");
         console.error(data.error);
+        setError(data.error); //Set error message if API returns an error
       }
     } catch (error) {
       console.error("Error:", error);
@@ -332,6 +334,11 @@ export const Landing = ({ pathLengths, title, description, className }) => {
                   )}
                 </>
               </div>
+            </div>
+          )}
+          {error && ( // Display error message if API returns an error
+            <div className="text-[tomato] mt-2 text-wrap w-full max-w-sm text-ellipsis">
+              {error}
             </div>
           )}
         </div>
