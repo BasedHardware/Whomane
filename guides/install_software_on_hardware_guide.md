@@ -82,10 +82,16 @@ cd pi
 ```
 
 ```
-sudp python start.py
+sudo python start.py
 ```
 
 ### 9. Setup auto-run
+
+Open up ~/.bashrc on your pi and add the following at the end
+
+```
+cd /path/to/pi/folder && sudo python start.py &
+```
 
 Congratulations! You have successfully set up your Raspberry Pi Zero W for development with your project.
 
